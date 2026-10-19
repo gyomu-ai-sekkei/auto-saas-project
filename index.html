@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReviewPulse | The AI Reputation Engine for Local Businesses</title>
+  <title>ReviewPulse | The AI Reputation Engine</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -16,6 +16,7 @@
     .bg-gradient-primary { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
     .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
     .floating { animation: float 6s ease-in-out infinite; }
+    .floating-delayed { animation: float 6s ease-in-out 3s infinite; }
     @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
   </style>
 </head>
@@ -30,13 +31,18 @@
           <span class="font-bold text-2xl tracking-tight">ReviewPulse</span>
         </div>
         <div class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
-          <a href="#features" class="hover:text-white transition">Features</a>
-          <a href="#demo" class="hover:text-white transition">How it Works</a>
-          <a href="#roi" class="hover:text-white transition">ROI</a>
-          <a href="#pricing" class="hover:text-white transition">Pricing</a>
+          <a href="#features" class="hover:text-white transition" data-i18n="nav_features">Features</a>
+          <a href="#how-it-works" class="hover:text-white transition" data-i18n="nav_how">How it Works</a>
+          <a href="#pricing" class="hover:text-white transition" data-i18n="nav_pricing">Pricing</a>
         </div>
-        <div>
-          <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="bg-white text-slate-900 hover:bg-slate-100 px-6 py-2.5 rounded-full text-sm font-bold transition shadow-lg">
+        <div class="flex items-center gap-4">
+          <!-- 言語切り替え -->
+          <select id="langSwitch" onchange="changeLanguage(this.value)" class="bg-slate-800 text-slate-300 text-sm rounded-lg border border-slate-700 focus:ring-blue-500 focus:border-blue-500 block p-2 cursor-pointer outline-none">
+            <option value="en">🇺🇸 EN</option>
+            <option value="ja">🇯🇵 JA</option>
+            <option value="es">🇪🇸 ES</option>
+          </select>
+          <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="hidden sm:block bg-white text-slate-900 hover:bg-slate-100 px-6 py-2.5 rounded-full text-sm font-bold transition shadow-lg" data-i18n="nav_trial">
             Start Free Trial
           </a>
         </div>
@@ -45,8 +51,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <main class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-primary">
-    <!-- Background glow -->
+  <main class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-primary">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500/20 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -55,258 +60,166 @@
         <div>
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-sm text-blue-400 font-semibold mb-6">
             <span class="flex h-2.5 w-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-            #1 AI Reputation Manager for Local Businesses
+            <span data-i18n="hero_badge">#1 AI Reputation Manager for Local Businesses</span>
           </div>
-          <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+          <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]" data-i18n="hero_title">
             Turn Every Review Into <br>
             <span class="text-gradient">More Customers.</span>
           </h1>
-          <p class="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed">
+          <p class="text-lg lg:text-xl text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">
             Stop losing local SEO rankings to unanswered reviews. ReviewPulse monitors Google Maps 24/7 and uses hyper-tuned AI to craft perfect, brand-aligned responses instantly.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold transition shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2">
-              Start 14-Day Free Trial
+              <span data-i18n="hero_btn">Start 14-Day Free Trial</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
-            <p class="text-sm text-slate-500 flex items-center justify-center sm:justify-start gap-2 px-2">
-              <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              Takes 2 mins to setup. Cancel anytime.
-            </p>
           </div>
+          <p class="mt-4 text-sm text-slate-500 flex items-center justify-center sm:justify-start gap-2" data-i18n="hero_guarantee">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            Takes 2 mins to setup. Cancel anytime.
+          </p>
         </div>
 
-        <!-- Hero Visual Mockup -->
-        <div class="relative lg:ml-10 floating">
-          <div class="glass-card p-6 rounded-2xl shadow-2xl relative z-10 border border-slate-700">
-            <!-- Review Mockup -->
-            <div class="flex gap-4 mb-4 pb-4 border-b border-slate-700/50">
-              <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-xl font-bold">J</div>
-              <div>
-                <h4 class="font-bold">John D.</h4>
-                <div class="flex text-yellow-400 text-sm my-1">★★★★★</div>
-                <p class="text-sm text-slate-300">"The service was incredibly fast, but what really impressed me was the attention to detail. Highly recommend!"</p>
-                <p class="text-xs text-slate-500 mt-2">Posted 2 minutes ago on Google Maps</p>
+        <!-- Hero Eye-Catch (Video & UI Mockup) -->
+        <div class="relative lg:ml-10">
+          <!-- Main Image / Video Thumbnail -->
+          <div class="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3)] border border-slate-700/50 group">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Business Owner using ReviewPulse" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition duration-700">
+            <!-- Play Button Overlay (Creates illusion of video) -->
+            <div class="absolute inset-0 flex items-center justify-center bg-slate-900/20 group-hover:bg-transparent transition duration-500">
+              <div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-600 hover:scale-110 transition duration-300 border border-white/30 shadow-2xl">
+                <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
               </div>
             </div>
-            <!-- AI Reply Mockup -->
-            <div class="flex gap-4 relative">
-              <!-- AI Indicator Line -->
-              <div class="absolute -left-[27px] top-4 bottom-0 w-0.5 bg-blue-500/50 hidden sm:block"></div>
-              <div class="w-10 h-10 rounded-full bg-blue-600 flex flex-shrink-0 items-center justify-center shadow-lg shadow-blue-500/20">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              </div>
-              <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 w-full">
-                <div class="flex justify-between items-center mb-2">
-                  <h4 class="font-bold text-blue-400 text-sm">ReviewPulse AI Reply</h4>
-                  <span class="text-xs text-slate-400">Generated in 1.2s</span>
-                </div>
-                <p class="text-sm text-slate-300">"Hi John! Thank you so much for the 5-star review. We pride ourselves on fast service and attention to detail here at [Business Name]. We're thrilled to hear you had a great experience and look forward to welcoming you back soon!"</p>
-                <div class="mt-3 flex gap-2">
-                  <span class="text-[10px] font-bold px-2 py-1 bg-green-500/20 text-green-400 rounded">SEO Keyword Optimized</span>
-                  <span class="text-[10px] font-bold px-2 py-1 bg-purple-500/20 text-purple-400 rounded">Auto-Published</span>
-                </div>
-              </div>
+          </div>
+          
+          <!-- Floating UI Element 1 (Review) -->
+          <div class="absolute -bottom-8 -left-8 md:-left-12 glass-card p-4 rounded-xl shadow-2xl border border-slate-700 w-64 floating z-20">
+            <div class="flex text-yellow-400 text-sm mb-1">★★★★★</div>
+            <p class="text-xs text-slate-300">"Amazing service, highly recommend to everyone in town!"</p>
+            <p class="text-[10px] text-slate-500 mt-2">New Google Review</p>
+          </div>
+
+          <!-- Floating UI Element 2 (AI Reply) -->
+          <div class="absolute -top-8 -right-8 md:-right-12 glass-card p-4 rounded-xl shadow-2xl border border-blue-500/30 w-72 floating-delayed z-20 bg-blue-900/40">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+              <p class="text-[10px] font-bold text-blue-300">AI Auto-Reply Published</p>
             </div>
+            <p class="text-xs text-slate-200">"Thank you! We're thrilled you enjoyed our service. Hope to see you again!"</p>
+            <p class="text-[10px] text-green-400 mt-2 font-semibold">+ SEO Rank Boosted</p>
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Problem / Agitation Section -->
-  <section class="py-24 bg-slate-900 border-t border-slate-800" id="features">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ignoring Reviews is Destroying Your Local SEO.</h2>
-        <p class="text-xl text-slate-400">Google's algorithm prioritizes active, responsive businesses. Every unhandled review is a lost opportunity to rank higher than your competitors.</p>
-      </div>
-
+  <!-- Value Props -->
+  <section id="features" class="py-24 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-12" data-i18n="feat_title">Why Businesses Choose ReviewPulse</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="glass-card p-8 rounded-3xl hover:bg-slate-800/80 transition duration-300">
-          <div class="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">The Cost of Silence</h3>
-          <p class="text-slate-400">Unanswered 1-star reviews act as a warning sign to potential customers. 89% of consumers read business's responses before visiting.</p>
+        <div class="glass-card p-8 rounded-3xl">
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-xl font-bold mb-2" data-i18n="feat_1_title">Boost Local SEO</h3>
+          <p class="text-slate-400" data-i18n="feat_1_desc">Google loves active businesses. Answering reviews pushes you up in Maps search results.</p>
         </div>
-        <!-- Card 2 -->
-        <div class="glass-card p-8 rounded-3xl hover:bg-slate-800/80 transition duration-300">
-          <div class="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">The Time Drain</h3>
-          <p class="text-slate-400">Manually reading and typing out polite, professional replies takes hours every week—time you should be spending running your business.</p>
+        <div class="glass-card p-8 rounded-3xl">
+          <div class="text-4xl mb-4">⏱️</div>
+          <h3 class="text-xl font-bold mb-2" data-i18n="feat_2_title">Save 10+ Hours/Month</h3>
+          <p class="text-slate-400" data-i18n="feat_2_desc">Never type a manual reply again. Let AI handle the customer service while you run your business.</p>
         </div>
-        <!-- Card 3 (Solution) -->
-        <div class="glass-card p-8 rounded-3xl border-t-4 border-t-blue-500 bg-blue-900/10">
-          <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <h3 class="text-2xl font-bold mb-3">The ReviewPulse Edge</h3>
-          <p class="text-slate-400">We turn reputation management on autopilot. Instant, empathetic, SEO-rich replies that make Google and your customers love you.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROI / Value Comparison -->
-  <section class="py-24 bg-slate-950" id="roi">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 class="text-4xl font-bold mb-6">The Highest ROI Tool in Your Tech Stack.</h2>
-          <p class="text-lg text-slate-400 mb-8">Hiring an agency to manage your reputation costs thousands. Doing it yourself costs your sanity. ReviewPulse costs less than a cup of coffee per day.</p>
-          
-          <div class="space-y-6">
-            <div class="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center">🏢</div>
-                <span class="font-semibold text-slate-300">Marketing Agency</span>
-              </div>
-              <span class="text-red-400 font-bold">~$500/mo</span>
-            </div>
-            <div class="flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center">😓</div>
-                <span class="font-semibold text-slate-300">Doing it yourself</span>
-              </div>
-              <span class="text-orange-400 font-bold">10+ Hours/mo</span>
-            </div>
-            <div class="flex items-center justify-between p-5 rounded-xl bg-blue-600/20 border border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.15)] relative overflow-hidden">
-              <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">🤖</div>
-                <span class="font-bold text-white text-lg">ReviewPulse AI</span>
-              </div>
-              <span class="text-blue-400 font-extrabold text-2xl">$29/mo</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial -->
-        <div class="relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2rem] blur-xl opacity-20"></div>
-          <div class="relative glass-card p-10 rounded-[2rem]">
-            <div class="flex text-yellow-400 text-xl mb-6">★★★★★</div>
-            <p class="text-2xl font-medium leading-relaxed mb-8">"I run a busy dental clinic and literally never had time to reply to Google reviews. Since installing ReviewPulse, we've gone from a 4.2 to a 4.8 rating, and our 'near me' search traffic is up 35%. It pays for itself 100x over."</p>
-            <div class="flex items-center gap-4">
-              <div class="w-14 h-14 rounded-full bg-slate-700 bg-[url('https://i.pravatar.cc/150?img=47')] bg-cover"></div>
-              <div>
-                <h4 class="font-bold text-lg">Sarah Jenkins</h4>
-                <p class="text-slate-400">Owner, Smilebright Dental</p>
-              </div>
-            </div>
-          </div>
+        <div class="glass-card p-8 rounded-3xl">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h3 class="text-xl font-bold mb-2" data-i18n="feat_3_title">Damage Control</h3>
+          <p class="text-slate-400" data-i18n="feat_3_desc">Got a 1-star review? Our AI diffuses the situation professionally, protecting your brand.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="py-24 bg-slate-900 relative">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzQxNTUiIGZpbGwtb3BhY2l0eT0iMC4xNSI+PHBhdGggZD0iTTM2IDM0djIwaDJ2LTIwaC0yeiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
-      <p class="text-xl text-slate-400 mb-16">Unlock the full power of autonomous reputation management. No hidden fees.</p>
+  <section id="pricing" class="py-24 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="price_title">Simple Pricing. No Hidden Fees.</h2>
       
-      <div class="bg-gradient-primary p-1 md:p-1 rounded-[2.5rem] shadow-2xl shadow-blue-900/30 max-w-lg mx-auto">
-        <div class="bg-slate-900 rounded-[2.4rem] p-8 md:p-12 border border-slate-700 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
-          
+      <div class="bg-gradient-primary p-1 rounded-[2.5rem] shadow-2xl shadow-blue-900/30 max-w-lg mx-auto mt-12">
+        <div class="bg-slate-900 rounded-[2.4rem] p-8 md:p-12 border border-slate-700">
           <h3 class="text-2xl font-bold mb-2">Pro Business Plan</h3>
-          <p class="text-slate-400 mb-6">Everything you need to dominate local SEO.</p>
-          
           <div class="flex items-baseline justify-center gap-1 mb-8">
             <span class="text-6xl font-extrabold text-white">$29</span>
-            <span class="text-xl text-slate-400 font-medium">/month</span>
+            <span class="text-xl text-slate-400 font-medium" data-i18n="price_month">/month</span>
           </div>
-          
-          <ul class="text-left space-y-4 mb-10">
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-              <span class="text-slate-300">Connect Google Business & Yelp</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-              <span class="text-slate-300">Unlimited AI-Generated Replies</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-              <span class="text-slate-300">Custom Brand Tone & Instructions</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-              <span class="text-slate-300">Auto-Publish or "Draft for Approval" mode</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-              <span class="text-slate-300">Damage Control: Instant alerts for 1-star reviews</span>
-            </li>
-          </ul>
-          
-          <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="block w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl text-lg font-bold transition shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
-            Start 14-Day Free Trial
+          <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="block w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl text-lg font-bold transition shadow-lg">
+            <span data-i18n="price_btn">Get Started Now</span>
           </a>
-          <p class="mt-4 text-sm text-slate-500 font-medium">No commitment. Cancel anytime with 1 click.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-24 bg-slate-950 border-t border-slate-800">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-      <div class="space-y-6">
-        <div class="glass-card p-6 rounded-2xl">
-          <h4 class="text-lg font-bold mb-2">Will the AI sound like a robot?</h4>
-          <p class="text-slate-400">Not at all. You can provide ReviewPulse with your business's specific "brand tone" (e.g., professional, casual, enthusiastic). It generates highly contextual, empathetic replies that sound perfectly human.</p>
-        </div>
-        <div class="glass-card p-6 rounded-2xl">
-          <h4 class="text-lg font-bold mb-2">Can I review the replies before they are posted?</h4>
-          <p class="text-slate-400">Yes! While you can set it to "Auto-Publish" for maximum efficiency, you can also set it to "Draft Mode." In Draft Mode, the AI writes the reply and emails it to you to approve or edit with one click.</p>
-        </div>
-        <div class="glass-card p-6 rounded-2xl">
-          <h4 class="text-lg font-bold mb-2">How does this help my local SEO?</h4>
-          <p class="text-slate-400">Google explicitly states that responding to reviews improves your local search ranking. ReviewPulse ensures a 100% response rate within minutes, naturally weaving in relevant keywords to boost your map visibility.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Translation Script -->
+  <script>
+    const translations = {
+      en: {
+        nav_features: "Features", nav_how: "How it Works", nav_pricing: "Pricing", nav_trial: "Start Free Trial",
+        hero_badge: "#1 AI Reputation Manager for Local Businesses",
+        hero_title: "Turn Every Review Into <br><span class='text-gradient'>More Customers.</span>",
+        hero_desc: "Stop losing local SEO rankings to unanswered reviews. ReviewPulse monitors Google Maps 24/7 and uses hyper-tuned AI to craft perfect, brand-aligned responses instantly.",
+        hero_btn: "Start 14-Day Free Trial", hero_guarantee: "Takes 2 mins to setup. Cancel anytime.",
+        feat_title: "Why Businesses Choose ReviewPulse",
+        feat_1_title: "Boost Local SEO", feat_1_desc: "Google loves active businesses. Answering reviews pushes you up in Maps search results.",
+        feat_2_title: "Save 10+ Hours/Month", feat_2_desc: "Never type a manual reply again. Let AI handle the customer service while you run your business.",
+        feat_3_title: "Damage Control", feat_3_desc: "Got a 1-star review? Our AI diffuses the situation professionally, protecting your brand.",
+        price_title: "Simple Pricing. No Hidden Fees.", price_month: "/month", price_btn: "Get Started Now"
+      },
+      ja: {
+        nav_features: "機能", nav_how: "仕組み", nav_pricing: "料金", nav_trial: "無料トライアル開始",
+        hero_badge: "店舗向けAIレビュー管理ツール No.1",
+        hero_title: "すべてのレビューを、<br><span class='text-gradient'>次のお客様に変える。</span>",
+        hero_desc: "レビューの放置は、ローカルSEOの順位低下を招きます。ReviewPulseはGoogleマップを24時間監視し、ブランドに合った完璧な返信をAIが瞬時に作成します。",
+        hero_btn: "14日間の無料体験を始める", hero_guarantee: "設定はわずか2分。いつでも解約可能。",
+        feat_title: "ReviewPulseが選ばれる理由",
+        feat_1_title: "ローカルSEOの向上", feat_1_desc: "Googleは活発な店舗を評価します。レビューへの返信でマップ検索の上位表示を狙います。",
+        feat_2_title: "月10時間以上の節約", feat_2_desc: "面倒な返信作業はもう不要です。接客や店舗運営に集中している間に、AIが顧客対応を完了させます。",
+        feat_3_title: "炎上・ダメージ防止", feat_3_desc: "理不尽な星1レビューにもAIが冷静かつプロフェッショナルに対応し、ブランドイメージを守ります。",
+        price_title: "シンプルで分かりやすい料金体系", price_month: "/月", price_btn: "今すぐ始める"
+      },
+      es: {
+        nav_features: "Características", nav_how: "Cómo Funciona", nav_pricing: "Precios", nav_trial: "Prueba Gratis",
+        hero_badge: "#1 Gestor de Reputación IA para Negocios",
+        hero_title: "Convierte Cada Reseña en <br><span class='text-gradient'>Más Clientes.</span>",
+        hero_desc: "Deja de perder ranking SEO local por reseñas sin responder. ReviewPulse monitorea Google Maps 24/7 y usa IA para redactar respuestas perfectas al instante.",
+        hero_btn: "Prueba Gratis de 14 Días", hero_guarantee: "Configuración en 2 mins. Cancela cuando quieras.",
+        feat_title: "Por Qué Nos Eligen",
+        feat_1_title: "Mejora el SEO Local", feat_1_desc: "A Google le encantan los negocios activos. Responder reseñas te sube en los resultados de Maps.",
+        feat_2_title: "Ahorra +10 Horas/Mes", feat_2_desc: "Nunca más escribas una respuesta manual. Deja que la IA maneje el servicio al cliente.",
+        feat_3_title: "Control de Daños", feat_3_desc: "¿Una reseña de 1 estrella? Nuestra IA maneja la situación profesionalmente, protegiendo tu marca.",
+        price_title: "Precios Simples. Sin Cargos Ocultos.", price_month: "/mes", price_btn: "Empezar Ahora"
+      }
+    };
 
-  <!-- Final CTA -->
-  <section class="py-24 relative overflow-hidden">
-    <div class="absolute inset-0 bg-blue-600"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80"></div>
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-      <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Ready to dominate your local market?</h2>
-      <p class="text-blue-200 text-xl mb-10 max-w-2xl mx-auto">Join smart business owners who are saving time, boosting their SEO, and turning every review into revenue.</p>
-      <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="bg-white text-slate-900 px-10 py-5 rounded-full text-xl font-bold transition shadow-2xl hover:scale-105 inline-flex items-center gap-3">
-        Get Started for $29/mo
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-      </a>
-      <p class="mt-6 text-blue-300 font-medium">14-Day Free Trial. 100% Money-Back Guarantee.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-slate-950 py-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500">
-      <div class="flex justify-center items-center gap-2 mb-6">
-        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center font-bold text-sm text-white">R</div>
-        <span class="font-bold text-white text-xl">ReviewPulse</span>
-      </div>
-      <p class="mb-4">Automating Reputation. Boosting Revenue.</p>
-      <div class="flex justify-center gap-6 text-sm mb-8">
-        <a href="#" class="hover:text-white transition">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition">Terms of Service</a>
-        <a href="#" class="hover:text-white transition">Contact Support</a>
-      </div>
-      <p>© 2026 ReviewPulse. All rights reserved.</p>
-    </div>
-  </footer>
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.documentElement.lang = lang;
+    }
+    
+    // ブラウザの言語設定に応じて初期設定
+    window.onload = () => {
+      const userLang = navigator.language || navigator.userLanguage;
+      let defaultLang = 'en';
+      if(userLang.includes('ja')) defaultLang = 'ja';
+      if(userLang.includes('es')) defaultLang = 'es';
+      document.getElementById('langSwitch').value = defaultLang;
+      changeLanguage(defaultLang);
+    };
+  </script>
 
 </body>
 </html>
