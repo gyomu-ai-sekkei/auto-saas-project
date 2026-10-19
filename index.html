@@ -1,102 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReviewPulse - Turn Customer Reviews into Business Growth with AI</title>
+  <title>ReviewPulse | AI Autonomous Reputation Engine</title>
+  <!-- Tailwind CSS (モダンで美しいデザインを瞬時に適用) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>body { font-family: 'Inter', sans-serif; }</style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(to right, #60A5FA, #A78BFA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bg-gradient-dark { background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%); }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-900 text-white font-sans antialiased selection:bg-blue-500 selection:text-white">
 
-  <!-- ナビゲーション -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-lg">R</div>
-        <span class="font-bold text-xl tracking-tight text-white">ReviewPulse</span>
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2 cursor-pointer">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-500/30">R</div>
+        <span class="font-bold text-xl tracking-tight">ReviewPulse</span>
       </div>
-      <a href="#pricing" class="text-sm font-semibold text-slate-300 hover:text-white transition">Pricing</a>
+      <div class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+        <a href="#problem" class="hover:text-white transition">Why it matters</a>
+        <a href="#how-it-works" class="hover:text-white transition">How it Works</a>
+        <a href="#pricing" class="hover:text-white transition">Pricing</a>
+      </div>
+      <div>
+        <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-blue-500/30">
+          Start Free Trial
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- ヒーローセクション -->
-  <main class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-8">
-      <span>●</span> Autonomous Reputation Engine
+  <!-- Hero Section -->
+  <main class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-slate-700 text-sm text-slate-300 mb-8">
+        <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+        Autonomous Reputation Engine for Local Businesses
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+        Never Miss a Review. <br>
+        <span class="gradient-text">AI Replies in Seconds.</span>
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10">
+        Stop losing customers to unanswered 1-star reviews. ReviewPulse monitors your Google Maps 24/7, crafting personalized, brand-aligned responses to boost your local SEO automatically.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold transition shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2">
+          Start 14-Day Free Trial
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+        </a>
+        <a href="#how-it-works" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full text-lg font-bold transition border border-slate-700">
+          See How It Works
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-slate-500 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+        Cancel anytime. No credit card required to start.
+      </p>
     </div>
-    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6">
-      Never Miss a Review. <br>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-        AI Replies in Seconds.
-      </span>
-    </h1>
-    <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-      ReviewPulse monitors your Google Maps & Yelp listings 24/7. It crafts personalized, brand-aligned responses to boost local SEO rankings without lifting a finger.
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <!-- 決済リンク（ボタン上部） -->
-      <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-0.5 text-center">
-        Start 14-Day Trial ($29/mo)
-      </a>
-      <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-700 transition text-center">
-        See How It Works
-      </a>
-    </div>
-
-    <p class="mt-4 text-xs text-slate-500">Cancel anytime. 100% money-back guarantee within 14 days.</p>
   </main>
 
-  <!-- 特徴セクション -->
-  <section id="how-it-works" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-800/80">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold mb-4">01</div>
-        <h3 class="text-lg font-bold text-white mb-2">Sync Platforms</h3>
-        <p class="text-sm text-slate-400">Connect Google Business Profile, Yelp, or TripAdvisor via read-only API access in under 2 minutes.</p>
+  <!-- Problem Section (Agitation) -->
+  <section id="problem" class="py-20 bg-slate-900 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Unanswered Reviews are Costing You Sales</h2>
+        <p class="text-slate-400">Google prioritizes businesses that actively engage with their customers. Every unhandled 1-star review pushes your business down the search rankings.</p>
       </div>
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4">02</div>
-        <h3 class="text-lg font-bold text-white mb-2">AI Analyzes & Crafts</h3>
-        <p class="text-sm text-slate-400">Our fine-tuned LLM classifies sentiment, addresses specific complaints, and highlights positive feedback naturally.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-        <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4">03</div>
-        <h3 class="text-lg font-bold text-white mb-2">Auto-Publish & Boost SEO</h3>
-        <p class="text-sm text-slate-400">Active engagement directly increases Google Maps local search visibility and foot traffic to your business.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+          <div class="text-4xl mb-4">📉</div>
+          <h3 class="text-xl font-bold mb-2">Lower SEO Rankings</h3>
+          <p class="text-slate-400">Google Maps algorithms penalize businesses that ignore customer feedback, reducing your visibility to new customers.</p>
+        </div>
+        <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+          <div class="text-4xl mb-4">😡</div>
+          <h3 class="text-xl font-bold mb-2">Damaged Trust</h3>
+          <p class="text-slate-400">89% of consumers read business's responses to reviews. Silence makes it look like you don't care about their experience.</p>
+        </div>
+        <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 border-t-4 border-t-blue-500">
+          <div class="text-4xl mb-4">✨</div>
+          <h3 class="text-xl font-bold mb-2">The Solution: ReviewPulse</h3>
+          <p class="text-slate-400">Turn negative feedback into a customer service win automatically, boosting SEO and building trust instantly.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 料金セクション -->
-  <section id="pricing" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-800/80 text-center">
-    <h2 class="text-3xl font-extrabold text-white mb-4">Simple, Transparent Pricing</h2>
-    <p class="text-slate-400 mb-12">One plan. Everything included. Built to scale with your business.</p>
-
-    <div class="max-w-md mx-auto p-8 rounded-3xl bg-slate-900 border border-blue-500/30 relative shadow-2xl">
-      <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full">POPULAR</div>
-      <h3 class="text-xl font-bold text-white mb-2">Business Pro</h3>
-      <div class="flex justify-center items-baseline my-6">
-        <span class="text-5xl font-extrabold text-white">$29</span>
-        <span class="text-slate-400 ml-1">/month</span>
+  <!-- How it Works -->
+  <section id="how-it-works" class="py-24 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">How It Works</h2>
+        <p class="text-xl text-slate-400">Set it up in 2 minutes. Let AI handle the rest.</p>
       </div>
-      <ul class="text-left text-sm text-slate-300 space-y-3 mb-8">
-        <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Up to 3 Business Locations</li>
-        <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Automated Real-time Review Sync</li>
-        <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Custom Brand Tone & Guidelines</li>
-        <li class="flex items-center gap-2"><span class="text-blue-400 font-bold">✓</span> Weekly Performance Email Digest</li>
-      </ul>
-      <!-- 決済リンク（料金セクション） -->
-      <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="block w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition text-center shadow-lg shadow-blue-600/30">
+      <div class="grid md:grid-cols-3 gap-12 relative">
+        <!-- Connecting Line -->
+        <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-blue-500/0 via-blue-500/50 to-blue-500/0 z-0"></div>
+        
+        <div class="text-center relative z-10">
+          <div class="w-24 h-24 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-slate-900 shadow-xl mb-6 text-blue-400">1</div>
+          <h3 class="text-2xl font-bold mb-3">Sync Platforms</h3>
+          <p class="text-slate-400 leading-relaxed">Connect Google Business Profile or Yelp via secure read-only access. Takes less than a minute.</p>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-24 h-24 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-slate-900 shadow-xl mb-6 text-purple-400">2</div>
+          <h3 class="text-2xl font-bold mb-3">AI Crafts the Reply</h3>
+          <p class="text-slate-400 leading-relaxed">Our LLM analyzes the sentiment, addresses complaints empathetically, and matches your brand tone.</p>
+        </div>
+        <div class="text-center relative z-10">
+          <div class="w-24 h-24 mx-auto bg-slate-800 rounded-full flex items-center justify-center text-3xl font-bold border-4 border-slate-900 shadow-xl mb-6 text-green-400">3</div>
+          <h3 class="text-2xl font-bold mb-3">Boost SEO</h3>
+          <p class="text-slate-400 leading-relaxed">Replies are auto-published (or sent for your approval), keeping your listing active and ranking higher.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-24 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
+      <p class="text-xl text-slate-400 mb-12">One plan. Everything included. Built to scale with your business.</p>
+      
+      <div class="bg-gradient-dark p-8 md:p-12 rounded-3xl border border-blue-500/30 shadow-2xl shadow-blue-900/20 relative">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+          MOST POPULAR
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Business Pro</h3>
+        <div class="flex items-end justify-center gap-1 mb-8">
+          <span class="text-6xl font-extrabold">$29</span>
+          <span class="text-xl text-slate-400 font-medium pb-2">/month</span>
+        </div>
+        
+        <ul class="text-left space-y-4 mb-10 max-w-sm mx-auto">
+          <li class="flex items-center gap-3">
+            <svg class="w-6 h-6 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span>Up to 3 Business Locations</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-6 h-6 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span>Automated 24/7 Review Sync</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-6 h-6 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span>Custom Brand Tone AI Tuning</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-6 h-6 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span>Weekly Performance Digest</span>
+          </li>
+        </ul>
+        
+        <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="block w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl text-lg font-bold transition shadow-lg shadow-blue-500/25">
+          Start 14-Day Free Trial
+        </a>
+        <p class="mt-4 text-sm text-slate-400">100% money-back guarantee within 14 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-blue-600">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to dominate your local market?</h2>
+      <p class="text-blue-100 text-xl mb-10">Join smart business owners who save 10+ hours a month while boosting their SEO.</p>
+      <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="bg-white text-blue-600 px-10 py-4 rounded-full text-lg font-bold transition shadow-xl hover:scale-105 inline-block">
         Get Started Now
       </a>
     </div>
   </section>
 
-  <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-600">
-    &copy; 2026 ReviewPulse. All rights reserved.
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500">
+      <div class="flex justify-center items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center font-bold text-xs text-white">R</div>
+        <span class="font-bold text-white">ReviewPulse</span>
+      </div>
+      <p>© 2026 ReviewPulse. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
