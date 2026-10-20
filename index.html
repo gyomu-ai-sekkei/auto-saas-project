@@ -257,16 +257,29 @@
             <div class="border-b border-slate-700/50 pb-4 mb-6">
               <span class="font-bold text-slate-100 text-lg" data-i18n="ui_settings_title">AI Response Engine Settings</span>
             </div>
-            <div class="mb-6">
+            
+            <div class="mb-4">
               <label class="block text-sm font-semibold text-slate-300 mb-3" data-i18n="ui_brand_tone">Brand Tone</label>
               <div class="flex bg-[#0f172a] rounded-xl p-1 border border-slate-700">
-                <button onclick="setTone('friendly', this)" class="flex-1 bg-slate-700 text-white rounded-lg py-2.5 text-sm font-semibold shadow border border-slate-600 tone-btn" data-i18n="ui_friendly">Friendly & Warm</button>
-                <button onclick="setTone('prof', this)" class="flex-1 text-slate-500 hover:text-white py-2.5 text-sm font-medium transition tone-btn" data-i18n="ui_prof">Professional</button>
+                <button onclick="setTone('friendly', this)" class="flex-1 bg-slate-700 text-white rounded-md py-2 text-xs sm:text-sm font-semibold shadow border border-slate-600 tone-btn" data-i18n="ui_friendly">Friendly</button>
+                <button onclick="setTone('prof', this)" class="flex-1 text-slate-500 hover:text-white py-2 text-xs sm:text-sm font-medium transition tone-btn" data-i18n="ui_prof">Professional</button>
+                <button onclick="setTone('humor', this)" class="flex-1 text-slate-500 hover:text-white py-2 text-xs sm:text-sm font-medium transition tone-btn" data-i18n="ui_humor">Humorous</button>
+                <button onclick="setTone('empathy', this)" class="flex-1 text-slate-500 hover:text-white py-2 text-xs sm:text-sm font-medium transition tone-btn" data-i18n="ui_empathy">Empathetic</button>
               </div>
             </div>
-            <div class="mb-6">
+            
+            <div class="mb-4">
               <label class="block text-sm font-semibold text-slate-300 mb-3" data-i18n="ui_custom_prompt">Custom Instructions (Prompt)</label>
-              <textarea id="promptText" class="w-full bg-[#0f172a] border border-slate-700 rounded-xl p-4 text-sm text-slate-300 h-28 focus:outline-none focus:border-purple-500 resize-none transition-all duration-300" readonly data-i18n="prompt_friendly">Always thank the customer by name. Mention that we roast our coffee beans locally every morning.</textarea>
+              <textarea id="promptText" class="w-full bg-[#0f172a] border border-slate-700 rounded-xl p-3 text-sm text-slate-300 h-20 focus:outline-none focus:border-purple-500 resize-none transition-all duration-300" readonly data-i18n="prompt_friendly">Always thank the customer by name. Mention that we roast our coffee beans locally every morning.</textarea>
+            </div>
+
+            <div class="mb-2 bg-[#0f172a]/80 border border-slate-700 rounded-xl p-4 relative overflow-hidden">
+              <div class="absolute left-0 top-0 w-1 h-full bg-purple-500"></div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-bold text-purple-400 flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg><span data-i18n="ui_preview_title">AI Reply Preview</span></span>
+                <span class="text-[10px] text-slate-500 italic bg-slate-800 px-2 py-0.5 rounded" data-i18n="ui_dummy_review">Review: "Great food, but wait time was too long."</span>
+              </div>
+              <p id="exampleText" class="text-sm text-slate-300 italic transition-all duration-300 leading-relaxed" data-i18n="ex_friendly">"Hi Sarah! Thanks for the 4 stars and loving our food! So sorry about the wait—we're training new staff. See you soon!"</p>
             </div>
           </div>
         </div>
@@ -381,16 +394,16 @@
         ui_integrations: "Integrations", ui_sys_offline: "System Inactive", ui_sys_online: "System Online & Protected",
         ui_gbp: "Google Business Profile", ui_gbp_dis: "Disconnected", ui_gbp_conn: "Connected: Syncing Reviews...",
         step2_title: "Teach the AI Your Brand Voice", step2_desc: "Tell the AI how you want to sound and provide custom instructions.",
-        ui_settings_title: "AI Response Engine Settings", ui_brand_tone: "Brand Tone", ui_friendly: "Friendly & Warm", ui_prof: "Professional", ui_custom_prompt: "Custom Instructions",
-        prompt_friendly: "Always thank the customer by name. Mention that we roast our coffee beans locally every morning.",
+        ui_settings_title: "AI Response Engine Settings", ui_brand_tone: "Brand Tone", ui_friendly: "Friendly", ui_prof: "Professional", ui_humor: "Humorous", ui_empathy: "Empathetic", ui_custom_prompt: "Custom Instructions",
+        ui_preview_title: "AI Reply Example", ui_dummy_review: "Review: 'Great food, but wait time was too long.'",
+        prompt_friendly: "Always thank the customer by name. Be warm and inviting. Use an exclamation mark.",
         prompt_prof: "Maintain a formal and respectful tone. Acknowledge their feedback directly without using emojis.",
-        step3_title: "Watch the Magic Happen", step3_desc: "The AI analyzes sentiment instantly, handles complaints, and publishes the SEO-optimized reply.",
-        ui_review_inbox: "Review Inbox (Live Feed)", ui_ai_draft: "AI Auto-Reply Published",
-        r1_text: "\"The latte was fantastic, but the wait time was a bit long during the morning rush.\"",
-        r1_reply: "\"Hi Sarah! Thank you for the 4-star review. We sincerely apologize for the wait time. We are training new staff this week to speed up the line. Hope to serve you faster next time!\"",
-        r2_text: "\"Best service in town! They really know their stuff.\"",
-        r2_reply: "\"Thanks David! We're thrilled you had such a great experience. See you again soon!\"",
-        price_title: "Simple Pricing. No Hidden Fees.", price_month: "/month", price_btn: "Get Started Now"
+        prompt_humor: "Start with a lighthearted joke. Keep it casual. Joke about Mondays and offer a free pastry.",
+        prompt_empathy: "Show deep understanding and validate their feelings. Assure them we are actively fixing the issue.",
+        ex_friendly: "\"Hi Sarah! Thanks for the 4 stars and loving our food! So sorry about the wait—we're training new staff. See you soon!\"",
+        ex_prof: "\"Dear customer, thank you for your feedback. We sincerely apologize for the delay you experienced. We are addressing this with our team.\"",
+        ex_humor: "\"Hey Sarah! Glad you loved the food! The wait time? Yeah, our kitchen was moving at Monday-speed. Next pastry is on us! 🥐\"",
+        ex_empathy: "\"Hi Sarah. I completely understand how frustrating it is to wait when you're hungry. We are truly sorry and are fixing our scheduling to ensure this doesn't happen again.\"",
       },
       ja: {
         nav_concept: "コンセプト", nav_how: "チュートリアル", nav_features: "機能", nav_pricing: "料金", nav_trial: "無料トライアル開始",
@@ -407,16 +420,16 @@
         ui_integrations: "システム連携", ui_sys_offline: "システム停止中", ui_sys_online: "システム稼働中・保護完了",
         ui_gbp: "Googleビジネス", ui_gbp_dis: "未連携", ui_gbp_conn: "連携完了：レビュー同期中...",
         step2_title: "AIに「お店の声」を教える", step2_desc: "お店の雰囲気に合わせたトーンを選び、独自ルールを設定します。",
-        ui_settings_title: "AI自動返信エンジンの設定", ui_brand_tone: "ブランドのトーン", ui_friendly: "親しみやすい", ui_prof: "プロフェッショナル", ui_custom_prompt: "カスタム指示 (プロンプト)",
-        prompt_friendly: "常にお客様の名前を呼んで感謝を伝えて。毎朝お店でコーヒー豆を焙煎していることを言及して。",
+        ui_settings_title: "AI自動返信エンジンの設定", ui_brand_tone: "ブランドのトーン", ui_friendly: "親しみやすい", ui_prof: "プロ向け", ui_humor: "ユーモア", ui_empathy: "共感的・寄り添い", ui_custom_prompt: "カスタム指示 (プロンプト)",
+        ui_preview_title: "AI返信プレビュー", ui_dummy_review: "レビュー:「食事は最高だが、待ち時間が長すぎた」",
+        prompt_friendly: "常にお客様の名前を呼んで感謝を伝えて。親しみやすく温かいトーンで。",
         prompt_prof: "絵文字を使用せず、非常にフォーマルで丁寧な言葉遣いを徹底してください。",
-        step3_title: "あとは魔法を見るだけ", step3_desc: "レビューが届くとAIが瞬時に感情を分析。クレームには丁寧に謝罪し、自動で返信を公開します。",
-        ui_review_inbox: "レビュー受信箱 (ライブ)", ui_ai_draft: "AIによる自動返信完了",
-        r1_text: "「ラテは最高でしたが、朝のラッシュ時は待ち時間が少し長かったです。」",
-        r1_reply: "「Sarah様、星4の評価ありがとうございます！朝の混雑時にお待たせしてしまい申し訳ございません。現在スタッフの増員と研修を行っております。」",
-        r2_text: "「町で一番のサービス！スタッフの知識も素晴らしいです。」",
-        r2_reply: "「David様、ありがとうございます！素晴らしい体験を提供できて私たちも嬉しいです。またのご来店をお待ちしております！」",
-        price_title: "シンプルで分かりやすい料金体系", price_month: "/月", price_btn: "今すぐ始める"
+        prompt_humor: "冗談を交えてカジュアルに。待ち時間の長さを自虐的にイジって和ませて。",
+        prompt_empathy: "お客様の不満に深く寄り添い、感情を理解していることを示して。誠実に謝罪を。",
+        ex_friendly: "「Sarah様、お食事がお口に合って嬉しいです！待ち時間が長くなってしまい本当にごめんなさい。またのご来店をお待ちしています！」",
+        ex_prof: "「Sarah様、貴重なご意見誠にありがとうございます。お待たせしてしまい深くお詫び申し上げます。運営体制の見直しを図ってまいります。」",
+        ex_humor: "「Sarah様、お食事を楽しんでいただけて最高です！待ち時間ですか？キッチンが月曜ボケしていました…お詫びに次回パンをサービスしますね！🥐」",
+        ex_empathy: "「Sarah様。お腹が空いている中でお待たせしてしまい、イライラさせてしまったこと、心よりお詫び申し上げます。現在シフトを調整し改善に努めております。」",
       },
       es: {
         nav_concept: "Concepto", nav_how: "Cómo Funciona", nav_features: "Características", nav_pricing: "Precios", nav_trial: "Prueba Gratis",
@@ -433,16 +446,16 @@
         ui_integrations: "Integraciones", ui_sys_offline: "Sistema Inactivo", ui_sys_online: "Sistema en Línea y Protegido",
         ui_gbp: "Google Business", ui_gbp_dis: "Desconectado", ui_gbp_conn: "Conectado: Sincronizando...",
         step2_title: "Enseña a la IA tu Voz", step2_desc: "Configura el tono y añade instrucciones personalizadas para la IA.",
-        ui_settings_title: "Configuración de IA", ui_brand_tone: "Tono de Marca", ui_friendly: "Amigable", ui_prof: "Profesional", ui_custom_prompt: "Instrucciones",
-        prompt_friendly: "Agradece siempre al cliente por su nombre. Menciona que tostamos café localmente.",
+        ui_settings_title: "Configuración de IA", ui_brand_tone: "Tono de Marca", ui_friendly: "Amigable", ui_prof: "Profesional", ui_humor: "Humorístico", ui_empathy: "Empático", ui_custom_prompt: "Instrucciones",
+        ui_preview_title: "Vista previa de IA", ui_dummy_review: "Reseña: 'Gran comida, pero la espera fue larga.'",
+        prompt_friendly: "Agradece siempre al cliente por su nombre. Sé cálido e invitante.",
         prompt_prof: "Mantén un tono formal y respetuoso sin usar emojis.",
-        step3_title: "Mira Ocurrir la Magia", step3_desc: "La IA analiza las reseñas al instante, maneja quejas y publica respuestas con SEO.",
-        ui_review_inbox: "Bandeja de Reseñas", ui_ai_draft: "Respuesta IA Publicada",
-        r1_text: "\"El latte estuvo fantástico, pero la espera fue un poco larga.\"",
-        r1_reply: "\"¡Hola Sarah! Gracias por la reseña. Nos disculpamos por la espera. Estamos capacitando nuevo personal. ¡Esperamos verte pronto!\"",
-        r2_text: "\"¡El mejor servicio! Saben lo que hacen.\"",
-        r2_reply: "\"¡Gracias David! Nos alegra que tuvieras una gran experiencia. ¡Hasta la próxima!\"",
-        price_title: "Precios Simples. Sin Cargos Ocultos.", price_month: "/mes", price_btn: "Empezar Ahora"
+        prompt_humor: "Comienza con una broma ligera. Mantenlo casual y ofrece un pastel gratis.",
+        prompt_empathy: "Muestra profunda comprensión. Asegúrales que estamos solucionando el problema.",
+        ex_friendly: "\"¡Hola Sarah! ¡Gracias por amar nuestra comida! Lamentamos la espera, estamos capacitando personal. ¡Nos vemos pronto!\"",
+        ex_prof: "\"Estimado cliente, gracias por sus comentarios. Nos disculpamos sinceramente por la demora. Lo estamos abordando con el equipo.\"",
+        ex_humor: "\"¡Oye Sarah! ¡Me alegra que te gustara la comida! ¿La espera? Sí, nuestra cocina iba a velocidad de lunes. ¡El próximo pastel invita la casa! 🥐\"",
+        ex_empathy: "\"Hola Sarah. Entiendo completamente lo frustrante que es esperar. Lo sentimos mucho y estamos mejorando nuestros horarios.\"",
       },
       zh: {
         nav_concept: "理念", nav_how: "工作原理", nav_features: "功能", nav_pricing: "定价", nav_trial: "免费试用",
@@ -459,89 +472,45 @@
         ui_integrations: "系统集成", ui_sys_offline: "系统未激活", ui_sys_online: "系统在线并受保护",
         ui_gbp: "Google 商家", ui_gbp_dis: "未连接", ui_gbp_conn: "已连接: 正在同步...",
         step2_title: "设定AI的品牌基调", step2_desc: "选择您的语气，并提供自定义回复指令。",
-        ui_settings_title: "AI 设置", ui_brand_tone: "品牌基调", ui_friendly: "友好亲切", ui_prof: "专业严谨", ui_custom_prompt: "自定义指令",
-        prompt_friendly: "始终称呼客户的名字。提及我们每天早上都在店里烘焙咖啡豆。",
+        ui_settings_title: "AI 设置", ui_brand_tone: "品牌基调", ui_friendly: "友好亲切", ui_prof: "专业严谨", ui_humor: "幽默风趣", ui_empathy: "同理心", ui_custom_prompt: "自定义指令",
+        ui_preview_title: "AI 回复预览", ui_dummy_review: "评论: '食物很好，但等太久了。'",
+        prompt_friendly: "始终称呼客户的名字。保持热情和邀请的语气。",
         prompt_prof: "保持正式和尊重的语气，不要使用表情符号。",
-        step3_title: "见证奇迹", step3_desc: "当评论到达时，AI瞬间分析情感，处理投诉并发布SEO优化回复。",
-        ui_review_inbox: "评论收件箱", ui_ai_draft: "AI 自动回复已发布",
-        r1_text: "“拿铁很棒，但是早高峰期间等得有点久。”",
-        r1_reply: "“嗨 Sarah！感谢您的4星好评。对于早高峰的等待我们深表歉意，正在培训新员工。希望下次能为您提供更快捷的服务！”",
-        r2_text: "“服务太棒了！他们真的很专业。”",
-        r2_reply: "“谢谢 David！很高兴您有这么好的体验。期待您的再次光临！”",
-        price_title: "定价简单。无隐藏费用。", price_month: "/月", price_btn: "立即开始"
+        prompt_humor: "以一个轻松的笑话开始。保持随意，提供免费糕点。",
+        prompt_empathy: "表现出深刻的理解并肯定他们的感受。向他们保证我们正在解决问题。",
+        ex_friendly: "“嗨 Sarah！感谢您喜欢我们的食物！对于漫长的等待我们深感抱歉。期待您的再次光临！”",
+        ex_prof: "“尊敬的客户，感谢您的反馈。对于您的延误我们深表歉意，管理层正在处理此事。”",
+        ex_humor: "“嘿 Sarah！很高兴您喜欢！等待时间太长？是的，我们的厨房可能还在过星期一。下次免费送您一个糕点！🥐”",
+        ex_empathy: "“嗨 Sarah。我完全理解饿着肚子等待有多令人沮丧。我们真的非常抱歉，并正在调整排班确保不再发生。”",
       }
     };
-
-    // Toggle System (Before/After Logic)
-    function toggleSystem(element) {
-      const dot = element.querySelector('.dot');
-      const isOff = !dot.classList.contains('translate-x-7');
-      
-      // Visual Switch Toggle
-      dot.classList.toggle('translate-x-7');
-      element.classList.toggle('bg-slate-700');
-      element.classList.toggle('bg-blue-500');
-
-      // Update Texts & Colors
-      const sysBadge = document.getElementById('sys-badge');
-      const gbpText = document.getElementById('gbp-text');
-      const statusOff = document.getElementById('status-off');
-      const statusOn = document.getElementById('status-on');
-
-      if(isOff) {
-        // Turn ON
-        sysBadge.className = "text-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-md transition-colors";
-        sysBadge.setAttribute('data-i18n', 'ui_sys_online');
-        sysBadge.innerText = translations[currentLang]['ui_sys_online'] || 'System Online & Protected';
-        
-        gbpText.className = "text-sm text-blue-400 transition-colors";
-        gbpText.setAttribute('data-i18n', 'ui_gbp_conn');
-        gbpText.innerText = translations[currentLang]['ui_gbp_conn'] || 'Connected: Syncing Reviews...';
-
-        // Animate Panel (Before/After Effect)
-        statusOff.classList.remove('opacity-100', 'translate-y-0');
-        statusOff.classList.add('opacity-0', '-translate-y-4');
-        setTimeout(() => {
-          statusOn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-          statusOn.classList.add('opacity-100', 'translate-y-0');
-        }, 200);
-
-      } else {
-        // Turn OFF
-        sysBadge.className = "text-sm bg-slate-800 text-slate-400 border border-slate-700 px-3 py-1 rounded-md transition-colors";
-        sysBadge.setAttribute('data-i18n', 'ui_sys_offline');
-        sysBadge.innerText = translations[currentLang]['ui_sys_offline'] || 'System Inactive';
-        
-        gbpText.className = "text-sm text-slate-500 transition-colors";
-        gbpText.setAttribute('data-i18n', 'ui_gbp_dis');
-        gbpText.innerText = translations[currentLang]['ui_gbp_dis'] || 'Disconnected';
-
-        // Animate Panel
-        statusOn.classList.remove('opacity-100', 'translate-y-0');
-        statusOn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-        setTimeout(() => {
-          statusOff.classList.remove('opacity-0', '-translate-y-4');
-          statusOff.classList.add('opacity-100', 'translate-y-0');
-        }, 200);
-      }
-    }
 
     // Tone Button Interaction
     function setTone(toneName, btnElement) {
       const buttons = document.querySelectorAll('.tone-btn');
       buttons.forEach(btn => {
-        btn.className = "flex-1 text-slate-500 hover:text-white py-2.5 text-sm font-medium transition tone-btn";
+        btn.className = "flex-1 text-slate-500 hover:text-white py-2 text-xs sm:text-sm font-medium transition tone-btn";
       });
-      btnElement.className = "flex-1 bg-slate-700 text-white rounded-lg py-2.5 text-sm font-semibold shadow border border-slate-600 tone-btn";
+      btnElement.className = "flex-1 bg-slate-700 text-white rounded-md py-2 text-xs sm:text-sm font-semibold shadow border border-slate-600 tone-btn";
       
-      const promptMap = { 'friendly': 'prompt_friendly', 'prof': 'prompt_prof' };
+      const promptMap = { 'friendly': 'prompt_friendly', 'prof': 'prompt_prof', 'humor': 'prompt_humor', 'empathy': 'prompt_empathy' };
+      const exampleMap = { 'friendly': 'ex_friendly', 'prof': 'ex_prof', 'humor': 'ex_humor', 'empathy': 'ex_empathy' };
+      
       const textArea = document.getElementById('promptText');
+      const exampleText = document.getElementById('exampleText');
+      
       textArea.setAttribute('data-i18n', promptMap[toneName]);
       textArea.value = translations[currentLang][promptMap[toneName]] || translations['en'][promptMap[toneName]];
       
+      exampleText.setAttribute('data-i18n', exampleMap[toneName]);
+      exampleText.innerText = translations[currentLang][exampleMap[toneName]] || translations['en'][exampleMap[toneName]];
+      
+      // Animations
       textArea.classList.add('border-blue-500', 'bg-blue-900/20');
+      exampleText.classList.add('text-white', 'scale-[1.02]');
       setTimeout(() => {
         textArea.classList.remove('border-blue-500', 'bg-blue-900/20');
+        exampleText.classList.remove('text-white', 'scale-[1.02]');
       }, 500);
     }
 
