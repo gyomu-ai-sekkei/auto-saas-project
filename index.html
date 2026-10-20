@@ -14,7 +14,7 @@
       -webkit-text-fill-color: transparent;
     }
     .glass-panel {
-      background: rgba(30, 41, 59, 0.65);
+      background: rgba(30, 41, 59, 0.75);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -78,24 +78,24 @@
 
   <!-- Hero Section (Blurred Background + Floating UI) -->
   <main class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-    <!-- Background Image with Blur and Dark Overlay -->
+    <!-- Background Image: Warm, smiling local business owner -->
     <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Cafe background" class="w-full h-full object-cover filter blur-sm brightness-[0.3]">
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/80 to-[#0f172a]"></div>
+      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Smiling cafe owner" class="w-full h-full object-cover filter blur-[2px] brightness-[0.4]">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/80 to-[#0f172a]"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-10">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Hero Text -->
         <div class="text-left">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm text-blue-300 font-semibold mb-6 border-blue-500/30">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm text-blue-300 font-semibold mb-6 border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
             <span class="flex h-2.5 w-2.5 rounded-full bg-blue-400 animate-pulse"></span>
             <span data-i18n="hero_badge">#1 AI Reputation Manager</span>
           </div>
           <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-white" data-i18n="hero_title">
             Turn Every Review Into <br><span class="text-gradient">More Customers.</span>
           </h1>
-          <p class="text-lg lg:text-xl text-slate-300 mb-8 leading-relaxed font-light" data-i18n="hero_desc">
+          <p class="text-lg lg:text-xl text-slate-200 mb-8 leading-relaxed font-light drop-shadow-md" data-i18n="hero_desc">
             Stop losing local SEO rankings to unanswered reviews. ReviewPulse monitors Google Maps 24/7 and uses hyper-tuned AI to craft perfect, brand-aligned responses instantly.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -107,22 +107,31 @@
         </div>
 
         <!-- Floating UI Elements (Hero Visual) -->
-        <div class="relative h-[400px] hidden lg:block">
+        <div class="relative h-[450px] hidden lg:block">
           <!-- Floating Review Card -->
-          <div class="absolute top-10 right-10 glass-panel p-5 rounded-2xl w-80 floating z-20 shadow-2xl">
-            <div class="flex text-yellow-400 text-sm mb-2">★★★★★</div>
-            <p class="text-sm text-slate-200 font-medium">"Amazing coffee and friendly staff! Highly recommend."</p>
-            <p class="text-[10px] text-slate-400 mt-2">New Google Review • 1 min ago</p>
+          <div class="absolute top-10 right-5 glass-panel p-5 rounded-2xl w-[340px] floating z-20 shadow-2xl border-white/10">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-white">EM</div>
+              <div>
+                <h4 class="font-bold text-sm text-white">Emily M.</h4>
+                <div class="flex text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-200 font-medium">"Such a welcoming atmosphere and the owner always remembers my usual order! Highly recommend."</p>
+            <p class="text-[10px] text-slate-400 mt-2">New Google Review • Just now</p>
           </div>
           <!-- Floating AI Reply Card -->
-          <div class="absolute bottom-10 left-0 glass-panel p-5 rounded-2xl w-96 floating-delayed z-30 shadow-2xl border-blue-500/30">
+          <div class="absolute bottom-5 left-0 glass-panel p-5 rounded-2xl w-[380px] floating-delayed z-30 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-blue-500/40 bg-blue-900/30">
             <div class="flex items-center gap-2 mb-3">
-              <div class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-              <p class="text-[11px] font-bold text-blue-300 uppercase tracking-wider">AI Auto-Reply Published</p>
+              <div class="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]"></div>
+              <p class="text-xs font-bold text-blue-300 uppercase tracking-wider">AI Auto-Reply Published</p>
             </div>
-            <p class="text-sm text-slate-200">"Thank you so much! We pride ourselves on our locally roasted coffee and friendly team. Hope to see you again soon!"</p>
-            <div class="mt-3 flex gap-2">
-              <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded-md font-semibold border border-green-500/20">+ SEO Boost Applied</span>
+            <p class="text-sm text-white leading-relaxed">"Hi Emily! Thank you so much for the kind words. We love seeing our regulars and having your usual ready! Thanks for supporting our local business, see you next time!"</p>
+            <div class="mt-4 flex gap-2">
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2.5 py-1.5 rounded-md font-bold border border-emerald-500/30 flex items-center gap-1">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                SEO Boost Applied
+              </span>
             </div>
           </div>
         </div>
@@ -143,7 +152,7 @@
           <h3 class="text-xl font-bold mb-3 text-white" data-i18n="concept_1_title">The Problem</h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n="concept_1_desc">Business owners are too busy running their operations to reply to every review. Ignoring them damages local SEO and makes potential customers choose competitors.</p>
         </div>
-        <div class="glass-panel p-8 rounded-3xl text-left border-t-4 border-t-blue-500 relative transform md:-translate-y-4 shadow-2xl shadow-blue-900/20">
+        <div class="glass-panel p-8 rounded-3xl text-left border-t-4 border-t-blue-500 relative transform md:-translate-y-4 shadow-2xl shadow-blue-900/20 bg-blue-900/10">
           <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-blue-500/30">🤖</div>
           <h3 class="text-xl font-bold mb-3 text-white" data-i18n="concept_2_title">Our Solution</h3>
           <p class="text-slate-300 text-sm leading-relaxed" data-i18n="concept_2_desc">ReviewPulse connects directly to your review platforms. Our custom AI reads, analyzes sentiment, and writes highly personalized, SEO-optimized replies 24/7 on autopilot.</p>
@@ -175,27 +184,34 @@
           <p class="text-lg text-slate-400 mb-8" data-i18n="step1_desc">Link your Google Business and Yelp accounts with a single click. Watch how turning on ReviewPulse instantly secures your digital presence.</p>
           
           <!-- Before/After Status Panel -->
-          <div class="glass-panel p-5 rounded-2xl relative overflow-hidden">
-            <h4 class="text-sm font-bold text-slate-300 mb-4 uppercase tracking-wider" data-i18n="ui_biz_status">Business Status Forecast</h4>
+          <div class="glass-panel p-6 rounded-2xl relative overflow-hidden shadow-2xl border-slate-700/80">
+            <h4 class="text-sm font-bold text-slate-300 mb-5 uppercase tracking-wider flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+              <span data-i18n="ui_biz_status">Business Status Forecast</span>
+            </h4>
             
             <!-- OFF State (Before) -->
             <div id="status-off" class="status-transition opacity-100 transform translate-y-0">
-              <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center gap-3 mb-3 p-3 bg-red-900/20 rounded-lg border border-red-500/20">
                 <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
                 <span class="text-red-400 font-semibold" data-i18n="status_off_1">Vulnerable: 24 Unanswered Reviews</span>
               </div>
-              <p class="text-slate-400 text-sm ml-6 mb-2" data-i18n="status_off_2">Local SEO dropping. Competitors are outranking you.</p>
-              <p class="text-slate-500 text-xs ml-6" data-i18n="status_off_3">Time wasted manually replying: ~15 hrs/mo</p>
+              <ul class="space-y-2 mt-4 text-sm">
+                <li class="flex items-center gap-2 text-slate-400"><span class="text-red-500">↘</span> <span data-i18n="status_off_2">Local SEO dropping. Competitors outranking you.</span></li>
+                <li class="flex items-center gap-2 text-slate-500"><span class="text-orange-500">⏱</span> <span data-i18n="status_off_3">Time wasted manually replying: ~15 hrs/mo</span></li>
+              </ul>
             </div>
 
             <!-- ON State (After) -->
-            <div id="status-on" class="status-transition opacity-0 absolute top-5 left-5 right-5 pointer-events-none transform translate-y-4">
-              <div class="flex items-center gap-3 mb-2">
+            <div id="status-on" class="status-transition opacity-0 absolute top-16 left-6 right-6 pointer-events-none transform translate-y-4">
+              <div class="flex items-center gap-3 mb-3 p-3 bg-emerald-900/20 rounded-lg border border-emerald-500/20">
                 <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
                 <span class="text-emerald-400 font-semibold" data-i18n="status_on_1">Protected: 100% Response Rate</span>
               </div>
-              <p class="text-slate-300 text-sm ml-6 mb-2" data-i18n="status_on_2">SEO Ranking boosting. Trust established.</p>
-              <p class="text-emerald-500/80 text-xs ml-6 font-semibold" data-i18n="status_on_3">Time saved: 15 hrs/mo (AI Autopilot Active)</p>
+              <ul class="space-y-2 mt-4 text-sm">
+                <li class="flex items-center gap-2 text-slate-300"><span class="text-emerald-500">↗</span> <span data-i18n="status_on_2">SEO Ranking boosting. Trust established.</span></li>
+                <li class="flex items-center gap-2 text-blue-300 font-medium"><span class="text-blue-500">⚡</span> <span data-i18n="status_on_3">Time saved: 15 hrs/mo (AI Autopilot Active)</span></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -217,11 +233,14 @@
                   </div>
                 </div>
                 <!-- Master Interactive Switch -->
-                <div onclick="toggleSystem(this)" class="w-14 h-7 bg-slate-700 rounded-full relative cursor-pointer transition-colors duration-300 shadow-inner">
+                <div onclick="toggleSystem(this)" class="w-14 h-7 bg-slate-700 rounded-full relative cursor-pointer transition-colors duration-300 shadow-inner group">
                   <div class="dot absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-300"></div>
+                  <!-- Pulse effect to encourage clicking -->
+                  <div class="absolute -inset-2 rounded-full border-2 border-blue-500/50 animate-ping opacity-0 group-hover:opacity-100"></div>
                 </div>
               </div>
             </div>
+            <p class="mt-4 text-xs text-center text-slate-500 italic">↑ Click the switch to see the magic</p>
           </div>
         </div>
       </div>
@@ -265,8 +284,9 @@
             <div class="border-b border-slate-700/50 pb-4 mb-4 relative z-10 bg-[#1e293b]">
               <span class="font-bold text-slate-100 text-lg" data-i18n="ui_review_inbox">Review Inbox (Live Feed)</span>
             </div>
+            <!-- 3D Scrolling Marquee -->
             <div class="roll-animation pt-4">
-              <!-- Review Item -->
+              <!-- Review Item 1 -->
               <div class="mb-8">
                 <div class="flex justify-between items-start mb-3">
                   <div class="flex items-center gap-3">
@@ -281,10 +301,45 @@
                     <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <span class="text-xs font-bold text-blue-400" data-i18n="ui_ai_draft">AI Auto-Reply Published</span>
                   </div>
-                  <p class="text-sm text-slate-300" data-i18n="r1_reply">"Hi Sarah! Thank you for the 4-star review and for loving our locally roasted latte. We sincerely apologize for the wait time during the morning rush. We are training new staff this week to speed up the line. Hope to serve you faster next time!"</p>
+                  <p class="text-sm text-slate-300" data-i18n="r1_reply">"Hi Sarah! Thank you for the 4-star review. We sincerely apologize for the wait time. We are training new staff this week to speed up the line. Hope to serve you faster next time!"</p>
                 </div>
               </div>
-              <!-- Duplicate for loop omitted for brevity in demo, assuming seamless CSS -->
+              <!-- Review Item 2 -->
+              <div class="mb-8">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-white">DL</div>
+                    <span class="font-bold text-slate-200">David L.</span>
+                  </div>
+                  <span class="text-yellow-400 text-sm">★★★★★</span>
+                </div>
+                <p class="text-sm text-slate-300 ml-12 mb-4" data-i18n="r2_text">"Best service in town! They really know their stuff."</p>
+                <div class="ml-12 bg-[#0f172a] border border-slate-700 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-xs font-bold text-blue-400" data-i18n="ui_ai_draft">AI Auto-Reply Published</span>
+                  </div>
+                  <p class="text-sm text-slate-300" data-i18n="r2_reply">"Thanks David! We're thrilled you had such a great experience. See you again soon!"</p>
+                </div>
+              </div>
+              <!-- Duplicate Review Item 1 for infinite scroll loop -->
+              <div class="mb-8">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-sm font-bold text-white">SM</div>
+                    <span class="font-bold text-slate-200">Sarah M.</span>
+                  </div>
+                  <span class="text-yellow-400 text-sm">★★★★☆</span>
+                </div>
+                <p class="text-sm text-slate-300 ml-12 mb-4" data-i18n="r1_text">"The latte was fantastic, but the wait time was a bit long during the morning rush."</p>
+                <div class="ml-12 bg-[#0f172a] border border-slate-700 rounded-xl p-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-xs font-bold text-blue-400" data-i18n="ui_ai_draft">AI Auto-Reply Published</span>
+                  </div>
+                  <p class="text-sm text-slate-300" data-i18n="r1_reply">"Hi Sarah! Thank you for the 4-star review. We sincerely apologize for the wait time. We are training new staff this week to speed up the line. Hope to serve you faster next time!"</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -300,7 +355,7 @@
         <span class="text-6xl font-extrabold text-white">$29</span>
         <span class="text-xl text-slate-400 font-medium" data-i18n="price_month">/month</span>
       </div>
-      <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full text-lg font-bold transition shadow-lg shadow-blue-500/30">
+      <a href="https://buy.stripe.com/test_eVq8wP2SBgFja7c8IeeUU00" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full text-lg font-bold transition shadow-[0_0_30px_rgba(37,99,235,0.4)]">
         <span data-i18n="price_btn">Get Started Now</span>
       </a>
     </div>
@@ -309,6 +364,7 @@
   <script>
     let currentLang = 'en';
 
+    // Comprehensive multi-language dictionary
     const translations = {
       en: {
         nav_concept: "Concept", nav_how: "How it Works", nav_features: "Features", nav_pricing: "Pricing", nav_trial: "Start Free Trial",
@@ -332,6 +388,8 @@
         ui_review_inbox: "Review Inbox (Live Feed)", ui_ai_draft: "AI Auto-Reply Published",
         r1_text: "\"The latte was fantastic, but the wait time was a bit long during the morning rush.\"",
         r1_reply: "\"Hi Sarah! Thank you for the 4-star review. We sincerely apologize for the wait time. We are training new staff this week to speed up the line. Hope to serve you faster next time!\"",
+        r2_text: "\"Best service in town! They really know their stuff.\"",
+        r2_reply: "\"Thanks David! We're thrilled you had such a great experience. See you again soon!\"",
         price_title: "Simple Pricing. No Hidden Fees.", price_month: "/month", price_btn: "Get Started Now"
       },
       ja: {
@@ -339,24 +397,78 @@
         hero_badge: "店舗向けAIレビュー管理No.1", hero_title: "すべてのレビューを、<br><span class='text-gradient'>次のお客様に変える。</span>", hero_desc: "レビューの放置はローカルSEO低下を招きます。Googleマップを24時間監視し、ブランドに合った完璧な返信をAIが瞬時に作成します。", hero_btn: "14日間の無料体験を始める",
         concept_title: "レビュー対応が売上を左右する時代", concept_desc: "Googleのアルゴリズムは、顧客と積極的に交流する店舗を優遇します。未返信のレビューは大きな機会損失です。",
         concept_1_title: "根本的な課題", concept_1_desc: "店舗運営が忙しく、すべてのレビューに返信できない。その結果SEO順位が下がり、見込み客が競合に流れてしまいます。",
-        concept_2_title: "解決策 (システム概要)", concept_2_desc: "ReviewPulseをGoogleやYelpと連携させるだけ。AIがレビューの感情を分析し、最適なSEOキーワードを含めた返信を24時間自動で行います。",
-        concept_3_title: "導入後の未来", concept_3_desc: "返信率100%になりGoogleマップの順位が上昇。毎月10時間の業務削減と、悪評への即時対応によるダメージコントロールが実現します。",
+        concept_2_title: "解決策 (システム概要)", concept_2_desc: "ReviewPulseをGoogleやYelpと連携させるだけ。AIが感情を分析し、最適なSEOキーワードを含めた返信を自動で行います。",
+        concept_3_title: "導入後の未来", concept_3_desc: "返信率100%になりGoogleマップの順位が上昇。毎月10時間の業務削減と、悪評への即時対応が実現します。",
         tuto_main_title: "実際のダッシュボード画面", tuto_main_desc: "たった3つのシンプルなステップで、顧客対応を自動化できます。",
         step1_title: "アカウントを連携する", step1_desc: "Googleビジネスを1クリックで連携。スイッチをONにした瞬間、店舗のデジタルプレゼンスがどのように保護されるか確認してください。",
         ui_biz_status: "店舗ステータス予測",
         status_off_1: "警告：24件の未返信レビュー", status_off_2: "ローカルSEOが低下中。競合に負けています。", status_off_3: "手動返信による時間の浪費：約15時間/月",
         status_on_1: "保護中：返信率100%を維持", status_on_2: "SEO順位が上昇傾向。顧客からの信頼を獲得。", status_on_3: "削減された時間：15時間/月 (AI自動運転中)",
         ui_integrations: "システム連携", ui_sys_offline: "システム停止中", ui_sys_online: "システム稼働中・保護完了",
-        ui_gbp: "Googleビジネスプロフィール", ui_gbp_dis: "未連携", ui_gbp_conn: "連携完了：レビュー同期中...",
+        ui_gbp: "Googleビジネス", ui_gbp_dis: "未連携", ui_gbp_conn: "連携完了：レビュー同期中...",
         step2_title: "AIに「お店の声」を教える", step2_desc: "お店の雰囲気に合わせたトーンを選び、独自ルールを設定します。",
         ui_settings_title: "AI自動返信エンジンの設定", ui_brand_tone: "ブランドのトーン", ui_friendly: "親しみやすい", ui_prof: "プロフェッショナル", ui_custom_prompt: "カスタム指示 (プロンプト)",
         prompt_friendly: "常にお客様の名前を呼んで感謝を伝えて。毎朝お店でコーヒー豆を焙煎していることを言及して。",
         prompt_prof: "絵文字を使用せず、非常にフォーマルで丁寧な言葉遣いを徹底してください。",
         step3_title: "あとは魔法を見るだけ", step3_desc: "レビューが届くとAIが瞬時に感情を分析。クレームには丁寧に謝罪し、自動で返信を公開します。",
-        ui_review_inbox: "レビュー受信箱 (ライブフィード)", ui_ai_draft: "AIによる自動返信完了",
+        ui_review_inbox: "レビュー受信箱 (ライブ)", ui_ai_draft: "AIによる自動返信完了",
         r1_text: "「ラテは最高でしたが、朝のラッシュ時は待ち時間が少し長かったです。」",
-        r1_reply: "「Sarah様、星4の評価ありがとうございます！朝の混雑時にお待たせしてしまい誠に申し訳ございません。現在スタッフの増員と研修を行っております。次回はよりスムーズにご提供できるよう努めます！」",
+        r1_reply: "「Sarah様、星4の評価ありがとうございます！朝の混雑時にお待たせしてしまい申し訳ございません。現在スタッフの増員と研修を行っております。」",
+        r2_text: "「町で一番のサービス！スタッフの知識も素晴らしいです。」",
+        r2_reply: "「David様、ありがとうございます！素晴らしい体験を提供できて私たちも嬉しいです。またのご来店をお待ちしております！」",
         price_title: "シンプルで分かりやすい料金体系", price_month: "/月", price_btn: "今すぐ始める"
+      },
+      es: {
+        nav_concept: "Concepto", nav_how: "Cómo Funciona", nav_features: "Características", nav_pricing: "Precios", nav_trial: "Prueba Gratis",
+        hero_badge: "#1 Gestor de Reputación IA", hero_title: "Convierte Cada Reseña en <br><span class='text-gradient'>Más Clientes.</span>", hero_desc: "ReviewPulse monitorea Google Maps 24/7 y usa IA para redactar respuestas perfectas al instante.", hero_btn: "Prueba Gratis de 14 Días",
+        concept_title: "Por qué las reseñas son cruciales", concept_desc: "Los algoritmos modernos priorizan los negocios activos. Una reseña sin respuesta es una oportunidad perdida.",
+        concept_1_title: "El Problema", concept_1_desc: "Estás muy ocupado para responder. Ignorar reseñas daña tu SEO local y aleja clientes.",
+        concept_2_title: "Nuestra Solución", concept_2_desc: "Conecta tus plataformas. La IA analiza y responde de manera personalizada y optimizada para SEO 24/7.",
+        concept_3_title: "El Resultado", concept_3_desc: "Mejora tu ranking en Google con 100% de respuesta. Ahorra +10 horas al mes.",
+        tuto_main_title: "Mira el Panel en Acción", tuto_main_desc: "Automatizar tu servicio al cliente toma solo 3 simples pasos.",
+        step1_title: "Conecta tus Perfiles", step1_desc: "Vincula tus cuentas de Google y Yelp con un solo clic.",
+        ui_biz_status: "Pronóstico del Negocio",
+        status_off_1: "Vulnerable: 24 Reseñas sin Respuesta", status_off_2: "SEO Local cayendo. La competencia gana.", status_off_3: "Tiempo perdido respondiendo: ~15 hrs/mes",
+        status_on_1: "Protegido: Tasa de Respuesta 100%", status_on_2: "Ranking SEO impulsado. Confianza ganada.", status_on_3: "Tiempo ahorrado: 15 hrs/mes (IA Activa)",
+        ui_integrations: "Integraciones", ui_sys_offline: "Sistema Inactivo", ui_sys_online: "Sistema en Línea y Protegido",
+        ui_gbp: "Google Business", ui_gbp_dis: "Desconectado", ui_gbp_conn: "Conectado: Sincronizando...",
+        step2_title: "Enseña a la IA tu Voz", step2_desc: "Configura el tono y añade instrucciones personalizadas para la IA.",
+        ui_settings_title: "Configuración de IA", ui_brand_tone: "Tono de Marca", ui_friendly: "Amigable", ui_prof: "Profesional", ui_custom_prompt: "Instrucciones",
+        prompt_friendly: "Agradece siempre al cliente por su nombre. Menciona que tostamos café localmente.",
+        prompt_prof: "Mantén un tono formal y respetuoso sin usar emojis.",
+        step3_title: "Mira Ocurrir la Magia", step3_desc: "La IA analiza las reseñas al instante, maneja quejas y publica respuestas con SEO.",
+        ui_review_inbox: "Bandeja de Reseñas", ui_ai_draft: "Respuesta IA Publicada",
+        r1_text: "\"El latte estuvo fantástico, pero la espera fue un poco larga.\"",
+        r1_reply: "\"¡Hola Sarah! Gracias por la reseña. Nos disculpamos por la espera. Estamos capacitando nuevo personal. ¡Esperamos verte pronto!\"",
+        r2_text: "\"¡El mejor servicio! Saben lo que hacen.\"",
+        r2_reply: "\"¡Gracias David! Nos alegra que tuvieras una gran experiencia. ¡Hasta la próxima!\"",
+        price_title: "Precios Simples. Sin Cargos Ocultos.", price_month: "/mes", price_btn: "Empezar Ahora"
+      },
+      zh: {
+        nav_concept: "理念", nav_how: "工作原理", nav_features: "功能", nav_pricing: "定价", nav_trial: "免费试用",
+        hero_badge: "排名第一的AI声誉管理", hero_title: "将每条评论转化为 <br><span class='text-gradient'>更多客户。</span>", hero_desc: "ReviewPulse 24/7全天候监控谷歌地图，并瞬间生成完美的回复。", hero_btn: "开始14天免费试用",
+        concept_title: "为什么评论至关重要", concept_desc: "现代算法优先考虑活跃互动的企业。未回复的评论就是错失良机。",
+        concept_1_title: "问题所在", concept_1_desc: "老板太忙没时间回复。忽略评论会损害本地SEO。",
+        concept_2_title: "我们的解决方案", concept_2_desc: "连接您的平台。AI 24/7自动分析并撰写包含SEO优化的个性化回复。",
+        concept_3_title: "最终结果", concept_3_desc: "100%回复率提升谷歌排名。每月节省10多小时。",
+        tuto_main_title: "查看仪表盘实况", tuto_main_desc: "只需3个简单的步骤即可自动化您的客户服务。",
+        step1_title: "连接您的账户", step1_desc: "一键连接Google和Yelp，开启安全保护。",
+        ui_biz_status: "业务状态预测",
+        status_off_1: "脆弱: 24条未回复评论", status_off_2: "本地SEO下降。竞争对手排名反超。", status_off_3: "手动回复浪费时间：约15小时/月",
+        status_on_1: "受保护: 100%回复率", status_on_2: "SEO排名提升。建立客户信任。", status_on_3: "节省时间：15小时/月 (AI工作中)",
+        ui_integrations: "系统集成", ui_sys_offline: "系统未激活", ui_sys_online: "系统在线并受保护",
+        ui_gbp: "Google 商家", ui_gbp_dis: "未连接", ui_gbp_conn: "已连接: 正在同步...",
+        step2_title: "设定AI的品牌基调", step2_desc: "选择您的语气，并提供自定义回复指令。",
+        ui_settings_title: "AI 设置", ui_brand_tone: "品牌基调", ui_friendly: "友好亲切", ui_prof: "专业严谨", ui_custom_prompt: "自定义指令",
+        prompt_friendly: "始终称呼客户的名字。提及我们每天早上都在店里烘焙咖啡豆。",
+        prompt_prof: "保持正式和尊重的语气，不要使用表情符号。",
+        step3_title: "见证奇迹", step3_desc: "当评论到达时，AI瞬间分析情感，处理投诉并发布SEO优化回复。",
+        ui_review_inbox: "评论收件箱", ui_ai_draft: "AI 自动回复已发布",
+        r1_text: "“拿铁很棒，但是早高峰期间等得有点久。”",
+        r1_reply: "“嗨 Sarah！感谢您的4星好评。对于早高峰的等待我们深表歉意，正在培训新员工。希望下次能为您提供更快捷的服务！”",
+        r2_text: "“服务太棒了！他们真的很专业。”",
+        r2_reply: "“谢谢 David！很高兴您有这么好的体验。期待您的再次光临！”",
+        price_title: "定价简单。无隐藏费用。", price_month: "/月", price_btn: "立即开始"
       }
     };
 
@@ -380,13 +492,13 @@
         // Turn ON
         sysBadge.className = "text-sm bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-md transition-colors";
         sysBadge.setAttribute('data-i18n', 'ui_sys_online');
-        sysBadge.innerText = translations[currentLang]['ui_sys_online'] || 'System Online';
+        sysBadge.innerText = translations[currentLang]['ui_sys_online'] || 'System Online & Protected';
         
         gbpText.className = "text-sm text-blue-400 transition-colors";
         gbpText.setAttribute('data-i18n', 'ui_gbp_conn');
-        gbpText.innerText = translations[currentLang]['ui_gbp_conn'] || 'Connected';
+        gbpText.innerText = translations[currentLang]['ui_gbp_conn'] || 'Connected: Syncing Reviews...';
 
-        // Animate Panel
+        // Animate Panel (Before/After Effect)
         statusOff.classList.remove('opacity-100', 'translate-y-0');
         statusOff.classList.add('opacity-0', '-translate-y-4');
         setTimeout(() => {
@@ -436,8 +548,6 @@
     // Language Change Interaction
     function changeLanguage(lang) {
       currentLang = lang;
-      // Fallback to EN if language is ES or ZH since they are omitted in this snippet for space, 
-      // but in full production you'd include the dictionaries.
       const dictionary = translations[lang] || translations['en']; 
       
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -454,6 +564,8 @@
       const userLang = navigator.language || navigator.userLanguage;
       let defaultLang = 'en';
       if(userLang.includes('ja')) defaultLang = 'ja';
+      if(userLang.includes('es')) defaultLang = 'es';
+      if(userLang.includes('zh')) defaultLang = 'zh';
       document.getElementById('langSwitch').value = defaultLang;
       changeLanguage(defaultLang);
     };
