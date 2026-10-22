@@ -1,0 +1,53 @@
+name: Crawl Delta reporting workflow feedback
+description: Describe a repeated reporting task without private data.
+title: "[Crawl Delta workflow] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue will be public. Do not attach CSVs, client URLs, personal/client data, passwords, API keys, or screenshots containing private details.
+        Feedback does not include a support or feature-delivery promise. It is fine to say that the free tool is sufficient.
+  - type: dropdown
+    id: experience
+    attributes:
+      label: What did you try?
+      options:
+        - I compared my own exports in the browser tool
+        - I compared my own exports in the offline tool
+        - I ran the fictional worked example only
+        - I read the examples only
+    validations:
+      required: true
+  - type: textarea
+    id: repeated-task
+    attributes:
+      label: Which reporting task is still hard?
+      description: Describe the repeated task and the outcome you need, without URLs, files, or personal/client information.
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this task occur?
+      options:
+        - Not a recurring task
+        - Per site release
+        - Weekly
+        - Monthly
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: missing-outcome
+    attributes:
+      label: What missing outcome, if any, would justify paying?
+      description: Optional. An answer is not a purchase or a commitment. Nothing; the free tool is sufficient is a valid answer.
+    validations:
+      required: false
+  - type: checkboxes
+    id: public-data-check
+    attributes:
+      label: Public information only
+      options:
+        - label: I understand this issue is public and have excluded private/client data and files.
+          required: true

@@ -1,0 +1,4 @@
+Address,Status Code,Content Type,Title 1,Meta Description 1
+https://example.com/,200,text/html,Example,Example homepage
+https://example.com/about,200,text/html,About,About us
+https://example.com/new,200,text/html,New,

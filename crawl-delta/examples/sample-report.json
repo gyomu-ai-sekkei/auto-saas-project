@@ -1,0 +1,70 @@
+{
+  "version": "0.2.2-evaluation",
+  "before_urls": 3,
+  "after_urls": 3,
+  "counts": {
+    "resolved_rule": 2,
+    "status_changed": 1,
+    "added_to_export": 1,
+    "absent_from_export": 1
+  },
+  "changes": [
+    {
+      "url": "https://example.com/",
+      "change": "resolved_rule",
+      "issues": [
+        "missing_title"
+      ],
+      "before": "(blank)",
+      "after": "Example"
+    },
+    {
+      "url": "https://example.com/about",
+      "change": "resolved_rule",
+      "issues": [
+        "http_error"
+      ],
+      "before": "404",
+      "after": "200"
+    },
+    {
+      "url": "https://example.com/about",
+      "change": "status_changed",
+      "issues": [
+        "404 \u2192 200"
+      ],
+      "before": "404",
+      "after": "200"
+    },
+    {
+      "url": "https://example.com/new",
+      "change": "added_to_export",
+      "issues": [
+        "missing_description"
+      ],
+      "before": "Not in export",
+      "after": "In export"
+    },
+    {
+      "url": "https://example.com/old",
+      "change": "absent_from_export",
+      "issues": [],
+      "before": "In export",
+      "after": "Not in export"
+    }
+  ],
+  "coverage": {
+    "before": {
+      "urls": 3,
+      "http_status": 3,
+      "title": 2,
+      "description": 2
+    },
+    "after": {
+      "urls": 3,
+      "http_status": 3,
+      "title": 3,
+      "description": 3
+    }
+  }
+}
