@@ -41,8 +41,16 @@ Say whether you used the tool or only reviewed the example, which task repeats, 
 
 **Issues are public. Do not post CSV files, client or personal data, client URLs, passwords, keys, screenshots with private details, or other confidential information.** No private support, response time or future feature is promised.
 
+## Download the same offline toolkit without checkout
+
+**[Download the free ZIP](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-free-evaluation.zip)** · [Version0.2.2 release notes](https://github.com/gyomu-ai-sekkei/auto-saas-project/releases/tag/crawl-delta-evaluation-v0.2.2)
+
+Unzip it, open `crawl-delta-offline.html`, and try the worked example or choose two comparable CSV files. No GitHub/Gumroad account, checkout, Python or API key is needed for this download or the tool. The file is the same11,050-byte evaluation ZIP provided on Gumroad; optional payment there adds no features. SHA-256: `00d636ffb3bf0757642c9d6a894473326002f09200f5e4bd8a90b423aa77008e`.
+
+The ZIP includes the runnable HTML, its existing README and fictional CSVs. Hosting providers may process ordinary page/download requests. We do not have a central count of completed downloads or use. Reports stay on your device; review them before sharing.
+
 ## Free and optional payment
 
 The [offline ZIP on Gumroad](https://gyomuuser.gumroad.com/l/vyxxt) starts at $0. Enter 0 to get it free; $9 is a suggested optional one-time payment. Paying adds no extra features, custom support or promised updates. There is no subscription. Optional payments have the stated 30-day refund-request policy.
 
-This examples repository does not contain the comparison tool's source or change its software-use terms. Use the published browser tool or obtain the offline ZIP through the links above. There is no separate right to resell or redistribute the software. Mandatory consumer rights remain unaffected.
+The crawl-delta directory contains examples and workflow documents; the separately hosted offline ZIP contains the runnable HTML tool. Existing software-use terms remain in effect. There is no separate right to resell or redistribute the software. Mandatory consumer rights remain unaffected.
