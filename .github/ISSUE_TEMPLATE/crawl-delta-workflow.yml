@@ -38,6 +38,27 @@ body:
     validations:
       required: false
   - type: textarea
+    id: current-workaround
+    attributes:
+      label: How do you handle this task today?
+      description: Optional. Name a tool or general steps, and what still needs manual work. No client names, URLs, files or screenshots. No workaround needed is a valid answer.
+    validations:
+      required: false
+  - type: dropdown
+    id: manual-effort
+    attributes:
+      label: On the most recent occasion, how long did the remaining manual work take?
+      description: Optional. A rough self-estimate only, not a claim about time this tool would save.
+      options:
+        - Not measured or unsure
+        - No recurring manual work
+        - Under 15 minutes
+        - 15 to 60 minutes
+        - More than 60 minutes
+        - Prefer not to answer
+    validations:
+      required: false
+  - type: textarea
     id: missing-outcome
     attributes:
       label: What missing outcome, if any, would justify paying?
