@@ -10,6 +10,22 @@ This repository contains fictional CSVs, an actual generated JSON report, and a 
 
 [Watch the 16-second illustrated release check](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-404-to-200-en.mp4): the fictional `/about` page changes from HTTP 404 to 200, then the reviewer saves a portable report. This is an illustration, not a screen recording or customer result.
 
+
+## When a status is unknown
+
+A later export with an unknown HTTP status does not establish that an earlier error was fixed. Use this separate, fictional example to keep the next check explicit in a handoff.
+
+1. [Watch the 18-second illustrated example and inspect its files](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-unknown-status.html). It is an illustration, not a screen recording or customer result.
+2. Save the exact [before CSV](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-unknown-status-before.csv) and [after CSV](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-unknown-status-after.csv), then choose them in the [free browser tool](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/#workspace).
+3. Compare the output with the generated [HTML report](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-unknown-status-report.html) or [JSON report](https://crawl-delta-lab-20261018.feyreed64.chatgpt.site/assets/crawl-delta-unknown-status-report.json).
+
+Each file contains **one URL**, `https://example.test/about`: status `404` before and `0` after. The report contains **three change records for that same URL**: `not_evaluated` for the earlier HTTP-error check, `new_issue` for the unknown status, and `status_changed`. There is no `resolved_rule` record. Status 0 is treated as unknown here; confirm what it means in your own export.
+
+Save the report to show what still needs follow-up, then recheck the URL using your usual workflow. Crawl Delta does not perform that live recheck or establish a successful deployment.
+
+If this leaves a recurring handoff step manual, [describe the general workflow, current workaround and missing outcome](https://github.com/gyomu-ai-sekkei/auto-saas-project/issues/new?template=crawl-delta-workflow.yml). Posting requires GitHub sign-in and is public. Do not include CSVs, client URLs or other private information; reading the example and using the tool require no account.
+
+
 ## Reproduce a crawl-export comparison
 
 1. Download [before.csv](examples/before.csv) and [after.csv](examples/after.csv). On a GitHub file page, choose **Download raw file**; a ZIP of this repository is also available from **Code → Download ZIP**.
@@ -19,7 +35,7 @@ This repository contains fictional CSVs, an actual generated JSON report, and a 
 
 These files contain three URLs per export and produce **five change records**, not five unique pages. [Read the expected result](WORKFLOW.md).
 
-The tool's separate built-in worked example contains four URLs per export and seven change records. It also includes `/about` changing from 404 to 200, but it is a different fixture. All example URLs use `example.com`; none are customer data.
+The tool's separate built-in worked example contains four URLs per export and seven change records. It also includes `/about` changing from 404 to 200, but it is a different fixture. The older multi-URL examples use `example.com`; the separate one-URL unknown-status example uses `example.test`. None are customer data.
 
 ## Bring your own exports
 
