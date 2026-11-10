@@ -26,6 +26,15 @@ Save the report to show what still needs follow-up, then recheck the URL using y
 If this leaves a recurring handoff step manual, [describe the general workflow, current workaround and missing outcome](https://github.com/gyomu-ai-sekkei/auto-saas-project/issues/new?template=crawl-delta-workflow.yml). Posting requires GitHub sign-in and is public. Do not include CSVs, client URLs or other private information; reading the example and using the tool require no account.
 
 
+## Prepare the next handoff
+
+[Use the review-note template](HANDOFF.md) to keep input references, evaluation coverage, unresolved observations and the next reviewer/check together. It includes a blank note for your private review and filled context for the existing fictional three-URL/five-record example.
+
+[Watch the 16-second illustrated handoff and inspect its exact samples](https://crawl-delta-lab-20261018.takahiro0328k.chatgpt.site/assets/crawl-delta-report-first). This is an illustration with actual core-generated findings from fictional CSVs, not a screen recording or customer result.
+
+The note is manual: it does not verify a live fix, approve a release or prove delivery. Keep completed notes and client data private; use the existing public feedback form only for a general workflow.
+
+
 ## Reproduce a crawl-export comparison
 
 1. Download [before.csv](examples/before.csv) and [after.csv](examples/after.csv). On a GitHub file page, choose **Download raw file**; a ZIP of this repository is also available from **Code → Download ZIP**.
